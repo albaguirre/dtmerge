@@ -1,7 +1,13 @@
-cmake_minimum_required (VERSION 2.6)
+cmake_minimum_required (VERSION 3.0)
 project (dtmerge)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+
+if( NOT EXISTS "${CMAKE_SOURCE_DIR}/dtc/.git" )
+  message( WARNING "Running 'git submodule update --init --recursive'")
+  execute_process(WORKING_DIRECTORY ${CMAKE_SOURCE_DIR} COMMAND git submodule update --init --recursive )
+endif()
+
 
 include_directories(dtc/libfdt)
 
