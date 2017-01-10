@@ -1,0 +1,3 @@
+Device Tree Merge utility
+
+dtmerge.c, dtoverlay.c and dtoverlay.h come from https://github.com/raspberrypi/userland
